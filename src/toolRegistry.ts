@@ -16,7 +16,7 @@ export const tools: ToolMeta[] = [
   {
     id: "json-parser",
     slug: "json-parser",
-    name: "JSON Parsor/Formatter",
+    name: "JSON Parsor/Formatter!!",
     description: "JSON 유효성 검사, 포매팅, 경로 추출(JSONPath-lite)",
     icon: "🧩",
     category: "JSON",
