@@ -5,7 +5,7 @@ import { bySlug, tools } from "./toolRegistry";
 import { usePrefs } from "./store/usePrefs";
 import ConsentBanner from "./components/ConsentBanner";
 import AdSenseSlot from "./ads/AdSenseSlot";
-import { TITLES } from "./constant/title";
+import { TITLES } from "./constant/text";
 
 function Home() {
   return (

@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { tools } from "../toolRegistry";
 import { usePrefs } from "../store/usePrefs";
 import clsx from "clsx";
+import { THEME } from "../constant/text";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const nav = useNavigate();
@@ -29,9 +30,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onChange={(e) => setTheme(e.target.value as any)}
           >
-            <option value="system">System</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
+            <option value="system">{THEME.SYSTME}</option>
+            <option value="light">{THEME.LIGHT}</option>
+            <option value="dark">{THEME.DARK}</option>
           </select>
         </div>
         <div className="hr"></div>

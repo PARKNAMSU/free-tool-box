@@ -1,4 +1,5 @@
 import { lazy, type JSX } from "react";
+import { TITLES } from "./constant/text";
 
 export type ToolMeta = {
   id: string;
@@ -16,7 +17,7 @@ export const tools: ToolMeta[] = [
   {
     id: "json-parser",
     slug: "json-parser",
-    name: "JSON Parsor/Formatter",
+    name: TITLES.JSON_PARSER,
     description: "JSON 유효성 검사, 포매팅, 경로 추출(JSONPath-lite)",
     icon: "🧩",
     category: "JSON",
@@ -25,7 +26,7 @@ export const tools: ToolMeta[] = [
   {
     id: "text-case",
     slug: "text-case",
-    name: "텍스트 변환기",
+    name: TITLES.TEXT_TRANSLATOR,
     description: "대소문자/슬러그/스네이크/카멜케이스 변환",
     icon: "🔤",
     category: "TEXT",
