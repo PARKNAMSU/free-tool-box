@@ -3,7 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { tools } from "../toolRegistry";
 import { usePrefs } from "../store/usePrefs";
 import clsx from "clsx";
-import { THEME } from "../constant/text";
+import { TEXT_LAYOUT, THEME } from "../constant/text";
+import { CATEGORY_LIST } from "../constant/constant";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const nav = useNavigate();
@@ -22,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <aside className="sidebar">
         <div className="row" style={{ justifyContent: "space-between" }}>
           <Link to="/" className="logo">
-            ToolSite
+            {TEXT_LAYOUT.TITLE}
           </Link>
           <select
             aria-label="테마"
@@ -38,12 +39,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="hr"></div>
         <input
           className="input"
-          placeholder="툴 검색…"
+          placeholder="search tool…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <div style={{ marginTop: 12, fontWeight: 700 }}>Category</div>
-        {["JSON", "TEXT", "FILE", "DEVELOP", "Etc"].map((cat) => (
+        <div style={{ marginTop: 12, fontWeight: 700 }}>
+          {TEXT_LAYOUT.CATEGORY}
+        </div>
+        {CATEGORY_LIST.map((cat) => (
           <div key={cat} style={{ marginTop: 8 }}>
             <div className="muted">{cat}</div>
             {filtered
@@ -101,10 +104,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main className="main">
         <header className="row" style={{ justifyContent: "space-between" }}>
-          <div className="muted">many tools 💡</div>
+          <div className="muted">{TEXT_LAYOUT.MUTED}</div>
           <div className="row">
             <button className="btn" onClick={() => nav("/")}>
-              홈
+              {TEXT_LAYOUT.HOME_BTN}
             </button>
           </div>
         </header>
@@ -115,9 +118,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="row" style={{ justifyContent: "space-between" }}>
             <div className="muted">© {new Date().getFullYear()} ToolSite</div>
             <div className="row" style={{ gap: 12 }}>
-              <a href="/privacy">개인정보</a>
-              <a href="/terms">약관</a>
-              <a href="/about">About</a>
+              <a href="/privacy">{TEXT_LAYOUT.PRIVACY}</a>
+              <a href="/terms">{TEXT_LAYOUT.TERMS}</a>
+              <a href="/about">{TEXT_LAYOUT.ABOUT}</a>
             </div>
           </div>
         </footer>
